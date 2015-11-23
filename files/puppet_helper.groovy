@@ -665,6 +665,22 @@ class Actions {
       //case hudson.security.LDAPSecurityRealm:
       // public LDAPSecurityRealm(String server, String rootDN, String userSearchBase, String userSearch, String groupSearchBase, String groupSearchFilter, LDAPGroupMembershipStrategy groupMembershipStrategy, String managerDN, Secret managerPasswordSecret, boolean inhibitInferRootDN, boolean disableMailAddressResolver, CacheConfiguration cache, EnvironmentProperty[] environmentProperties, String displayNameAttributeName, String mailAddressAttributeName, IdStrategy userIdStrategy, IdStrategy groupIdStrategy)
 
+      // active directory
+      case 'hudson.plugins.active_directory.ActiveDirectorySecurityRealm':
+        config = [
+	  setSecurityRealm: [
+	    (className): [
+              realm.@domain,
+              realm.@site,
+              realm.@bindName,
+              realm.@bindPassword,
+              realm.@server,
+	    ],
+	  ],
+	]
+        break
+
+
       // github-oauth
       case 'org.jenkinsci.plugins.GithubSecurityRealm':
         config = [
