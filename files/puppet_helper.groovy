@@ -675,6 +675,7 @@ class Actions {
               realm.@bindName,
               realm.@bindPassword,
               realm.@server,
+	      realm.@groupLookupStrategy
 	    ],
 	  ],
 	]
